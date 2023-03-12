@@ -1,9 +1,19 @@
-function newImage(url, left, bottom){
-    let image = document.createElement('img')
-    image.src = url
+
+function move(image,left, bottom){
     image.style.position = 'fixed'
     image.style.left = left + 'px'
     image.style.bottom = bottom + 'px'
+
+}
+let greenCharacter = newImage('assets/green-character.gif')
+move (greenCharacter, 100, 250)
+
+
+
+
+function newImage(url, left, bottom){
+    let image = document.createElement('img')
+    image.src = url
     document.body.append(image)
     return image
 }
@@ -25,6 +35,15 @@ function newItem(url, left, bottom){
         inventory.append(inventoryItem)
     })
     return item
+}
+function move(element){
+    element.style.position = 'fixed'
+    
+    function moveToCoordinates(left, bottom){
+        element.style.left = + 'px'
+        element.style.bottom = bottom + 'px'
+    }
+
 }
 
 newItem('assets/sword.png', 500, 555)
